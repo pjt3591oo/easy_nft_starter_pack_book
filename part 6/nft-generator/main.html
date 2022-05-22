@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- https://cdnjs.com/libraries/web3 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.6.1/web3.min.js" integrity="sha512-5erpERW8MxcHDF7Xea9eBQPiRtxbse70pFcaHJuOhdEBQeAxGQjUwgJbuBDWve+xP/u5IoJbKjyJk50qCnMD7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- https://github.com/ipfs/js-ipfs/blob/master/packages/ipfs-http-client/README.md -->
+    <script src="https://cdn.jsdelivr.net/npm/ipfs-http-client/dist/index.min.js"></script>
+
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+
+  <body class="container">
+    <div>
+      <div class="form-group">
+        <label>보유 ETH: </label>
+        <span id="eth_balance"></span>
+      </div>
+      <div class="form-group">
+        <label>보유 NFT: </label>
+        <span id="nft_balance"></span>
+      </div>
+      
+      <div class="form-inline">
+        <input id="pk" class="form-control" type="text" placeholder="PRIVATE KEY">
+        <button class="btn btn-default" id="wallet-import-btn">지갑 가져오기</button>
+      </div>
+    </div>
+
+    <hr></hr>
+
+    <div>
+      <div class="form-group">
+        <label>name </label>
+        <input class="form-control" type="text" id="nft-name">
+      </div>
+      <div class="form-group">
+        <label>file </label>
+        <input type="file" id="nft-file">
+      </div>
+
+      <button class="btn btn-default" id="nft-gen-btn">NFT 생성하기</button>
+    </div>
+
+    <hr></hr>
+
+    <div>
+      <div class="form-group">
+        <label>tokenId</label>
+        <input class="form-control" type="number" id="nft-tokenId" placeholder="tokenID를 입력해주세요">
+      </div>
+      <div class="form-group">
+        <label>owner address </label>
+        <span id="nft-owner-address-search"></span>
+      </div>
+      <div class="form-group">
+        <label>name </label>
+        <span id="nft-name-search"> </span>
+      </div>
+      <div>
+        <label>file path </label>
+        <span id="ipfs-path-search"> </span>
+      </div>
+
+      <button class="btn btn-default" id="nft-search-btn">NFT 조회하기</button>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
